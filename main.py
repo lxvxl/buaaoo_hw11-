@@ -1,7 +1,7 @@
 import os
 import threading
 import datetime
-jars = ['hw11.jar', 'wsj.jar', 'gyy.jar']  #存放待测的jar包
+jars = ['待测jar包1.jar', '待测jar包2.jar', '待测jar包3.jar']  #存放待测的jar包
 max = 1                             #测试的次数
 instructions_num = 10000             #每个测试点的指令数
 
@@ -18,7 +18,7 @@ def runTest(n:int):
     for jar in jars:
         start = datetime.datetime.now()
         os.system('Reader.exe ' + dataPath + ' | java -jar ' + jar + '>' + os.path.join(dir, jar + '.out'))
-        print(jar + ' in test ' + str(n) + ' finished! time:' + str(datetime.datetime.now() - start))
+        print(jar + ' in test ' + str(n) + ' finished! time:' + str((datetime.datetime.now() - start).total_seconds()))
 
     outputs = []
     fileName = []
@@ -41,6 +41,7 @@ def runTest(n:int):
     
     print(dir + ' finished!')
 
+thread_num = 8
 n = 1
 lock = threading.Lock()
 def runThread():
@@ -55,6 +56,6 @@ def runThread():
         lock.release()
         runTest(num)
 
-for i in range(8):
+for i in range(thread_num):
     t = threading.Thread(target=runThread)
     t.start()
