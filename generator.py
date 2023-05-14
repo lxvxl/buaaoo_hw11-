@@ -160,11 +160,8 @@ def getQm():
 def getQlm():
     return ' '.join(['qlm', getRandPersonId()])
 
-instructions = [getAp, getAr, getQlm]
-
-
-#[getAp, getAr, getQv, getQci, getQbs, getQts, getAg, getAtg, getDfg, getQgvs, getQgav, getMr, getQba, getQcs, getAm, getSm, getQsv, getQrm,
- #               getArem, getAnm, getCn, getAem, getSei, getQp, getDce, getQm, getQlm]
+instructions = [getAp, getAr, getQv, getQci, getQbs, getQts, getAg, getAtg, getDfg, getQgvs, getQgav, getMr, getQba, getQcs, getAm, getSm, getQsv, getQrm,
+               getArem, getAnm, getCn, getAem, getSei, getQp, getDce, getQm, getQlm]
 
 if __name__ == '__main__':
     n = int(sys.argv[1])
