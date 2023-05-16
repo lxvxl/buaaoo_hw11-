@@ -125,9 +125,9 @@ def getArem():
     id = getRandMessageId(0.1)
     messages.add(id)
     if type == 0:
-        return ' '.join(['arem', id, str(random.randint(0, 1000)), str(type), getRandPersonId(1), getRandPersonId(1)])
+        return ' '.join(['arem', id, str(random.randint(0, 200)), str(type), getRandPersonId(1), getRandPersonId(1)])
     else :
-        return ' '.join(['arem', id, str(random.randint(0, 1000)), str(type), getRandPersonId(1), getRandGroupId(1)])
+        return ' '.join(['arem', id, str(random.randint(0, 200)), str(type), getRandPersonId(1), getRandGroupId(1)])
 
 def getAnm():
     type = random.randint(0,1)
