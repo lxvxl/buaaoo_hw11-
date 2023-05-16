@@ -56,11 +56,11 @@ def getRandEmojiId(p:float=0.8)->str:
 def getAp()->str:
     id = getRandPersonId(0)
     name = getRandStr()
-    age = random.randint(0, 201)
+    age = random.randint(0, 200)
     return ' '.join(['ap', id, ''.join(name), age.__str__()])
 
 def getAr()->str:
-    return ' '.join(['ar', getRandPersonId(1), getRandPersonId(1), str(random.randint(1,101))])
+    return ' '.join(['ar', getRandPersonId(1), getRandPersonId(1), str(random.randint(1,100))])
 
 def getQlm():
     return ' '.join(['qlm', getRandPersonId(1)])
