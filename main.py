@@ -1,9 +1,14 @@
 import os
 import threading
 import datetime
-jars = ['待测jar包1.jar', '待测jar包2.jar', '待测jar包3.jar']  #存放待测的jar包
-max = 1                             #测试的次数
+jars = []  #存放待测的jar包
+max = 1                 #测试的次数
 instructions_num = 10000             #每个测试点的指令数
+
+def getJars():
+    for name in os.listdir('.'):
+        if name.endswith('.jar'):
+            jars.append(name)
 
 def runTest(n:int):
     
@@ -56,6 +61,9 @@ def runThread():
         lock.release()
         runTest(num)
 
-for i in range(thread_num):
-    t = threading.Thread(target=runThread)
-    t.start()
+if __name__ == '__main__':
+    if len(jars) == 0:
+        getJars()
+    for i in range(thread_num):
+        t = threading.Thread(target=runThread)
+        t.start()
